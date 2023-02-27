@@ -4,13 +4,13 @@
 class Router
 {
     /**
-     * @route содержит текущий маршрут
+     * @var array содержит текущий маршрут
      */
-    protected static $route  = [];
+    protected static array $route  = [];
     /**
-     * @routes содержит все маршруты, таблица маршрутов
+     * @var array содержит все маршруты, таблица маршрутов
      */
-    protected static $routes = [];
+    protected static array $routes = [];
 
     public function __construct()
     {
@@ -18,10 +18,11 @@ class Router
     }
 
     /**
-     * @param $regexp string регулярное выражение, url, который прописывает пользователь
-     * @param array $route
+     * добавляет маршрут в таблицу маршрутов
+     * @param string $regexp регулярное выражение, url, который прописывает пользователь
+     * @param array $route маршрут ([controller, action, params])
      */
-    public static function add(string $regexp, array $route = []): array
+    public static function add(string $regexp, array $route = []): void
     {
         self::$routes[$regexp] = $route;
     }
@@ -42,16 +43,75 @@ class Router
         return self::$routes;
     }
 
+    /**
+     * Можно сделать protected или private
+     * Проверяет регулярное выражение и записывает ассоциативный массив с контроллером и экшином
+     * @param string $url
+     * @return bool
+     */
     public static function matchRoute( string $url): bool
     {
 
         foreach (self::$routes as $pattern => $route) {
-            if ($url == $pattern) {
+            if (preg_match("#$pattern#i", $url, $matches)) {
+                foreach ($matches as $key => $value) {
+                    if (is_string($key)) {
+                        $route[$key] = $value;
+                    }
+                }
+                if (!isset($route['action'])) {
+                    $route['action'] = 'index';
+                }
                 self::$route = $route;
                 return true;
             }
         }
 
         return false;
+    }
+
+    /**
+     * Перенаправляет url по корректному маршруту
+     * @param $url string
+     */
+    public static function dispatch(string $url): void
+    {
+        if (self::matchRoute($url)) {
+            $controller = self::upperCamelCase(self::$route['controller']);
+            if (class_exists($controller)) {
+                $cObj = new $controller;
+                $action = self::lowerCamelCase(self::$route['action'].'Action');
+                if (method_exists($cObj, $action)) {
+                    $cObj->$action();
+                } else {
+                    echo "Метод <b>$controller::$action</b> не найден.";
+                }
+            } else {
+                echo "Контроллер <b>$controller</b> не найден.";
+            }
+        } else {
+            http_response_code(404);
+            require_once '404.html';
+        }
+    }
+
+    /**
+     * Из post-new делаем PostNew, для запуска метода
+     * @param $string
+     * @return string
+     */
+    protected static function upperCamelCase($string): string
+    {
+        return str_replace(' ','', ucwords(str_replace('-',' ', $string)));
+    }
+
+    /**
+     * Из test-page делаем testPage, для запуска метода
+     * @param $string
+     * @return string
+     */
+    protected static function lowerCamelCase($string): string
+    {
+        return lcfirst(self::upperCamelCase($string));
     }
 }
