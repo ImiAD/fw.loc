@@ -3,9 +3,7 @@
 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
-
-class Page extends Controller
+class PageController extends AppController
 {
     public function viewAction()
     {

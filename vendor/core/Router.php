@@ -20,8 +20,8 @@ class Router
 
     /**
      * добавляет маршрут в таблицу маршрутов
-     * @param string $regexp регулярное выражение, url, который прописывает пользователь
-     * @param array $route маршрут ([controller, action, params])
+     * $regexp регулярное выражение, url, который прописывает пользователь
+     * $route маршрут ([controller, action, params])
      */
     public static function add(string $regexp, array $route = []): void
     {
@@ -29,7 +29,7 @@ class Router
     }
 
     /**
-     * @return array возвращает текущий url
+     * возвращает текущий url
      */
     public static function getRoute(): array
     {
@@ -37,7 +37,7 @@ class Router
     }
 
     /**
-     * @return array возвращает все url
+     * возвращает все url
      */
     public static function getRoutes(): array
     {
@@ -47,10 +47,8 @@ class Router
     /**
      * Можно сделать protected или private
      * Проверяет регулярное выражение и записывает ассоциативный массив с контроллером и экшином
-     * @param string $url
-     * @return bool
      */
-    public static function matchRoute( string $url): bool
+    public static function matchRoute(string $url): bool
     {
 
         foreach (self::$routes as $pattern => $route) {
@@ -74,19 +72,18 @@ class Router
 
     /**
      * Перенаправляет url по корректному маршруту
-     * @param $url string
      */
     public static function dispatch(string $url): void
     {
         $url = self::removeQueryString($url);
-        var_dump($url);
         if (self::matchRoute($url)) {
-            $controller = 'app\controllers\\'.self::upperCamelCase(self::$route['controller']);
+            $controller = 'app\controllers\\'.self::upperCamelCase(self::$route['controller'].'Controller');
             if (class_exists($controller)) {
-                $cObj = new $controller(self::$route);
+                $cObj   = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action'].'Action');
                 if (method_exists($cObj, $action)) {
                     $cObj->$action();
+                    $cObj->getView();
                 } else {
                     echo "Метод <b>$controller::$action</b> не найден.";
                 }
@@ -101,28 +98,22 @@ class Router
 
     /**
      * Из post-new делаем PostNew, для запуска метода
-     * @param $string
-     * @return string
      */
-    protected static function upperCamelCase($string): string
+    protected static function upperCamelCase(string $string): string
     {
         return str_replace(' ','', ucwords(str_replace('-',' ', $string)));
     }
 
     /**
      * Из test-page делаем testPage, для запуска метода
-     * @param $string
-     * @return string
      */
-    protected static function lowerCamelCase($string): string
+    protected static function lowerCamelCase(string $string): string
     {
         return lcfirst(self::upperCamelCase($string));
     }
 
     /**
      * возвращает строку $url только с неявными GET парамметрами (до ?)
-     * @param string $url
-     * @return string
      */
     public static function removeQueryString(string $url): string
     {
@@ -134,7 +125,6 @@ class Router
                     return '';
                 }
         }
-        debug($url);
 
         return $url;
     }

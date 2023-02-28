@@ -11,6 +11,7 @@ define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__).'/app');
+define('LAYOUT', 'default');
 
 spl_autoload_register(function($class) {
    $file = ROOT.'/'.str_replace('\\','/', $class).'.php';
@@ -27,8 +28,6 @@ Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'v
 // Ддефолтные правила
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-
-debug(Router::getRoutes());
 
 Router::dispatch($query);
 
