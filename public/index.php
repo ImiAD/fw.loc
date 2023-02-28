@@ -1,20 +1,33 @@
 <?php
+error_reporting(-1);
 
-require_once '../vendor/core/Router.php';
+use vendor\core\Router;
+
 require_once '../vendor/libs/functions.php';
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');
 
-//Router::add('posts/add',['controller' => 'Posts', 'action' => 'add']);
-//Router::add('posts',['controller' => 'Posts', 'action' => 'index']);
-//Router::add('',['controller' => 'Main', 'action' => 'index']);
+define('WWW', __DIR__);
+define('CORE', dirname(__DIR__) . '/vendor/core');
+define('ROOT', dirname(__DIR__));
+define('APP', dirname(__DIR__).'/app');
+define('LAYOUT', 'default');
 
-Router::add('^$');
+spl_autoload_register(function($class) {
+   $file = ROOT.'/'.str_replace('\\','/', $class).'.php';
 
-debug(Router::getRoutes());
+   if (is_file($file)) {
+       require_once $file;
+   }
+});
 
-if (Router::matchRoute($query)) {
-    debug(Router::getRoute());
-} else {
-    echo '404';
-}
+// Свое правило, оно должно идти выше дефолтных. Это необходимо, чтобы срабатывало оно, если будет совпадение
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
+
+// Ддефолтные правила
+Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
+Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
+
+Router::dispatch($query);
+
