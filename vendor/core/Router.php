@@ -1,5 +1,6 @@
 <?php
 
+namespace vendor\core;
 
 class Router
 {
@@ -62,6 +63,7 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = 'index';
                 }
+                $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
                 return true;
             }
@@ -76,10 +78,12 @@ class Router
      */
     public static function dispatch(string $url): void
     {
+        $url = self::removeQueryString($url);
+        var_dump($url);
         if (self::matchRoute($url)) {
-            $controller = self::upperCamelCase(self::$route['controller']);
+            $controller = 'app\controllers\\'.self::upperCamelCase(self::$route['controller']);
             if (class_exists($controller)) {
-                $cObj = new $controller;
+                $cObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action'].'Action');
                 if (method_exists($cObj, $action)) {
                     $cObj->$action();
@@ -113,5 +117,25 @@ class Router
     protected static function lowerCamelCase($string): string
     {
         return lcfirst(self::upperCamelCase($string));
+    }
+
+    /**
+     * возвращает строку $url только с неявными GET парамметрами (до ?)
+     * @param string $url
+     * @return string
+     */
+    public static function removeQueryString(string $url): string
+    {
+        if ($url) {
+            $params = explode('&', $url, 2);
+                if (false == strpos($params[0], '=')) {
+                    return rtrim($params[0], '/');
+                } else {
+                    return '';
+                }
+        }
+        debug($url);
+
+        return $url;
     }
 }

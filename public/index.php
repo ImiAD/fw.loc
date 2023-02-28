@@ -1,10 +1,9 @@
 <?php
+error_reporting(-1);
 
-require_once '../vendor/core/Router.php';
+use vendor\core\Router;
+
 require_once '../vendor/libs/functions.php';
-//require_once '../app/controllers/Main.php';
-//require_once '../app/controllers/Posts.php';
-//require_once '../app/controllers/PostsNew.php';
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');
 
@@ -14,7 +13,7 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__).'/app');
 
 spl_autoload_register(function($class) {
-   $file = APP."/controllers/$class.php";
+   $file = ROOT.'/'.str_replace('\\','/', $class).'.php';
 
    if (is_file($file)) {
        require_once $file;
@@ -22,7 +21,8 @@ spl_autoload_register(function($class) {
 });
 
 // Свое правило, оно должно идти выше дефолтных. Это необходимо, чтобы срабатывало оно, если будет совпадение
-Router::add('^pages/?(?P<action>[a-z-]+)?$', ['controller' => 'Posts']);
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
+Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
 // Ддефолтные правила
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
