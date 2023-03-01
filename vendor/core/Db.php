@@ -26,12 +26,20 @@ class Db
 
     protected function __construct()
     {
-        $db     = require ROOT.'/config/config_db.php';
-        $option = [
-            \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
-            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-        ];
-        $this->pdo = new \PDO($db['dsn'], $db['user'], $db['pass'], $option);
+        $db = require ROOT.'/config/config_db.php';
+        require_once LIBS.'/rb.php';
+
+        /**
+         * устанаваливаем соединение с БД
+         */
+        \R::setup($db['dsn'], $db['user'], $db['pass']);
+        \R::freeze(true);
+//        \R::fancyDebug(true);
+//        $option = [
+//            \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+//            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+//        ];
+//        $this->pdo = new \PDO($db['dsn'], $db['user'], $db['pass'], $option);
     }
 
     public static function instance()
@@ -43,31 +51,31 @@ class Db
         return self::$instance;
     }
 
-    /**
-     *  возвращает bool значение (выполнился наш запрос или нет)
-     */
-    public function execute(string $sql, array $params = []): bool
-    {
-        self::$countSql++;
-        self::$queries[] = $sql;
-        $stmt = $this->pdo->prepare($sql);
-
-        return $stmt->execute($params);
-    }
-
-    /**
-     * возвращает данные по запросу $sql
-     */
-    public function query(string $sql, array $params = []): array
-    {
-        self::$countSql++;
-        self::$queries[] = $sql;
-        $stmt = $this->pdo->prepare($sql);
-        $res  = $stmt->execute($params);
-
-        if ($res !== false) {
-            return $stmt->fetchAll();
-        }
-        return [];
-    }
+//    /**
+//     *  возвращает bool значение (выполнился наш запрос или нет)
+//     */
+//    public function execute(string $sql, array $params = []): bool
+//    {
+//        self::$countSql++;
+//        self::$queries[] = $sql;
+//        $stmt = $this->pdo->prepare($sql);
+//
+//        return $stmt->execute($params);
+//    }
+//
+//    /**
+//     * возвращает данные по запросу $sql
+//     */
+//    public function query(string $sql, array $params = []): array
+//    {
+//        self::$countSql++;
+//        self::$queries[] = $sql;
+//        $stmt = $this->pdo->prepare($sql);
+//        $res  = $stmt->execute($params);
+//
+//        if ($res !== false) {
+//            return $stmt->fetchAll();
+//        }
+//        return [];
+//    }
 }
