@@ -23,6 +23,8 @@ class View
 
     public array $scripts = [];
 
+    public static array $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
+
     public function __construct(array $route, string $layout = '', string $view = '')
     {
 //        var_dump($layout);
@@ -83,5 +85,25 @@ class View
         }
 
         return $content;
+    }
+
+    /**
+     * получаем метаданные
+     */
+    public static function getMeta()
+    {
+        echo '<title>'.self::$meta['title'].'</title>
+        <meta name="description" content="'.self::$meta['desc'].'">
+        <meta name="keywords" content="'.self::$meta['keywords'].'">';
+    }
+
+    /**
+     * устанавливаем мета данные
+     */
+    public static function setMeta(string $title = '', string $desc = '', string $keywords = '')
+    {
+        self::$meta['title']    = $title;
+        self::$meta['desc']     = $desc;
+        self::$meta['keywords'] = $keywords;
     }
 }
