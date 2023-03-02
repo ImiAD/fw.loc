@@ -17,9 +17,6 @@ class MainController extends AppController
         $post  = \R::findOne('posts', 'id=2');
         $menu  = $this->menu;
         $title = 'PAGE TITLE';
-//        $this->setMeta($post->title, $post->description, $post->keywords);
-//        $this->setMeta($post->title, $post->description, $post->keywords);
-//        $meta = $this->meta;
         $meta = View::setMeta('Главная странца','Описание страницы','Ключевые слова');
         $this->set(compact('title', 'posts', 'menu', 'meta'));
     }

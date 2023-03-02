@@ -1,0 +1,13 @@
+[02-03-23 03-03-22] Текст ошибки: Undefined variable: test | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 71
+        
+===========================================
+[02-03-23 03-03-23] Текст ошибки: Undefined variable: test | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 71
+        
+===========================================
+[02-03-23 03-03-19] Текст ошибки: Undefined variable: test | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 71
+        
+===========================================
+[02-03-23 03-03-15] Текст ошибки: Trying to access array offset on value of type null 
+        | Файл: C:\OSPanel\domains\fw.loc\public\test\error\index.php | Строка: 42
+        
+===========================================

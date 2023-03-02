@@ -1,0 +1,52 @@
+[02-03-23 05-03-12] Текст ошибки: Undefined variable: test 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+        
+===========================================
+[02-03-23 05-03-12] Текст ошибки:  
+        | Файл:  | Строка: 
+        
+===========================================
+[02-03-23 05-03-53] Текст ошибки: Call to undefined function vendor\core\test() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 85
+        
+===========================================
+[02-03-23 05-03-53] Текст ошибки: Trying to access array offset on value of type null 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 36
+        
+===========================================
+[02-03-23 05-03-14] Текст ошибки: Call to undefined function vendor\core\test() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
+        
+===========================================
+[02-03-23 05-03-14] Текст ошибки: Trying to access array offset on value of type null 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 37
+        
+===========================================
+[02-03-23 05-03-16] Текст ошибки: Call to undefined function vendor\core\test() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
+        
+===========================================
+[02-03-23 05-03-16] Текст ошибки: Trying to access array offset on value of type null 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 37
+        
+===========================================
+[02-03-23 05-03-49] Текст ошибки: Undefined variable: t 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
+        
+===========================================
+[02-03-23 05-03-06] Текст ошибки: Undefined variable: t 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
+        
+===========================================
+[02-03-23 05-03-18] Текст ошибки: Call to undefined function vendor\core\test() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
+        
+===========================================
+[02-03-23 05-03-33] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
+        
+===========================================
+[02-03-23 05-03-51] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
+        
+===========================================

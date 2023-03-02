@@ -72,6 +72,7 @@ class Router
 
     /**
      * Перенаправляет url по корректному маршруту
+     * @throws \Exception
      */
     public static function dispatch(string $url): void
     {
@@ -85,14 +86,17 @@ class Router
                     $cObj->$action();
                     $cObj->getView();
                 } else {
-                    echo "Метод <b>$controller::$action</b> не найден.";
+                    throw new \Exception("Метод <b>$controller::$action</b> не найден.", 404);
+//                    echo "Метод <b>$controller::$action</b> не найден.";
                 }
             } else {
-                echo "Контроллер <b>$controller</b> не найден.";
+                throw new \Exception("Контроллер <b>$controller</b> не найден.", 404);
+//                echo "Контроллер <b>$controller</b> не найден.";
             }
         } else {
-            http_response_code(404);
-            require_once '404.html';
+            throw new \Exception("Страница не найдена.", 404);
+//            http_response_code(404);
+//            require_once '404.html';
         }
     }
 

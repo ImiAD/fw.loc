@@ -1,0 +1,81 @@
+<?php
+
+namespace vendor\core;
+
+class ErrorHandler
+{
+    public function __construct()
+    {
+        if (DEBUG) {
+            error_reporting(-1);
+        } else {
+            error_reporting(0);
+        }
+
+        set_error_handler([$this, 'errorHandler']);
+        ob_start();
+        register_shutdown_function([$this, 'fatalErrorHandler']);
+        set_exception_handler([$this, 'exceptionHandler']);
+    }
+
+    public function errorHandler(int $errno, string $errstr, string $errfile, int $errline): bool
+    {
+        $this->logErrors($errstr, $errfile, $errline);
+//        error_log("[".date('d-m-y h-m-s')."] Текст ошибки: {$errstr}
+//        | Файл: {$errfile} | Строка: {$errline}
+//        \n===========================================\n", 3, __DIR__.'/errors.log');
+        $this->displayError($errno, $errstr, $errfile, $errline);
+
+        return true;
+    }
+
+    public function fatalErrorHandler()
+    {
+        $error = error_get_last();
+//        error_log("[".date('d-m-y h-m-s')."] Текст ошибки: {$error['message']}
+//        | Файл: {$error['file']} | Строка: {$error['line']}
+//        \n===========================================\n", 3, __DIR__.'/errors.log');
+
+        if (!empty($error) && $error['type'] &  E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR) {
+            $this->logErrors($error['message'], $error['file'], $error['line']);
+            ob_end_clean();
+            $this->displayError($error['type'], $error['message'], $error['file'], $error['line']);
+        } else {
+            ob_end_flush();
+        }
+    }
+
+    protected function displayError($errno, string $errstr, string $errfile, int $errline, int $response = 500)
+    {
+        http_response_code($response);
+
+        if ($response == 404) {
+            require_once WWW.'/errors/404.html';
+            die;
+        }
+
+        if (DEBUG) {
+            require_once WWW.'/errors/dev.php';
+        } else {
+            require_once WWW.'/errors/prod.php';
+        }
+
+        die;
+    }
+
+    public function exceptionHandler($e)
+    {
+        $this->logErrors($e->getMessage(),$e->getFile(), $e->getLine());
+//        error_log("[".date('d-m-y h-m-s')."] Текст ошибки: {$e->getMessage()}
+//        | Файл: {$e->getFile()} | Строка: {$e->getLine()}
+//        \n===========================================\n", 3, __DIR__.'/errors.log');
+        $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
+    }
+
+    public function logErrors($message = '', $file = '', $line ='')
+    {
+        error_log("[".date('d-m-y h-m-s')."] Текст ошибки: {$message} 
+        | Файл: {$file} | Строка: {$line}
+        \n===========================================\n", 3, ROOT.'/tmp/errors.log');
+    }
+}
