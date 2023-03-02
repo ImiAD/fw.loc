@@ -12,17 +12,10 @@ class MainController extends AppController
     public function indexAction()
     {
         $model = new Main();
-        $posts = App::$app->cache->get('posts');
-
-        if (!$posts) {
-            $posts = \R::findAll('posts');
-            APP::$app->cache->set('posts', $posts, 3600*24);
-        }
-
+        $posts = \R::findAll('posts');
         $post  = \R::findOne('posts', 'id=2');
         $menu  = $this->menu;
         $title = 'PAGE TITLE';
-//        $this->setMeta('Главная странца', 'Описание страницы', 'Ключевые слова');
         $this->setMeta($post->title, $post->description, $post->keywords);
         $meta = $this->meta;
         $this->set(compact('title', 'posts', 'menu', 'meta'));
@@ -30,6 +23,12 @@ class MainController extends AppController
 
     public function testAction()
     {
-        $this->layout = 'test';
+        if ($this->isAjax()) {
+            echo 111;
+            die;
+        }
+
+        echo 222;
+//        $this->layout = 'test';
     }
 }

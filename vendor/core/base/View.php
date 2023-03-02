@@ -21,6 +21,8 @@ class View
      */
     public string $layout;
 
+    public array $scripts = [];
+
     public function __construct(array $route, string $layout = '', string $view = '')
     {
 //        var_dump($layout);
@@ -59,10 +61,27 @@ class View
         if (false !== $this->layout) {
             $file_layout = APP . "/views/layouts/{$this->layout}.php";
             if (is_file($file_layout)) {
+                $content = $this->getScripts($content);
+                $scripts = [];
+                if (!empty($this->scripts[0])) {
+                    $scripts = $this->scripts[0];
+                }
                 require_once $file_layout;
             } else {
                 echo "<p>Не найден шаблон <b>$file_layout</b></p>";
             }
         }
+    }
+
+    public function getScripts($content)
+    {
+        $pattern = "#<script.*?>.*?</script>#si";
+        preg_match_all($pattern, $content, $this->scripts);
+
+        if (!empty($this->scripts)) {
+            $content = preg_replace($pattern, '', $content);
+        }
+
+        return $content;
     }
 }
