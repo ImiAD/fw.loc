@@ -50,3 +50,31 @@
         | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
         
 ===========================================
+[03-03-23 08-03-59] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
+        
+===========================================
+[03-03-23 09-03-54] Текст ошибки: Undefined variable: test 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+        
+===========================================
+[03-03-23 10-03-18] Текст ошибки: Undefined variable: test 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+        
+===========================================
+[03-03-23 10-03-19] Текст ошибки: Undefined variable: test 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+        
+===========================================
+[03-03-23 10-03-28] Текст ошибки: Undefined variable: test 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 17
+        
+===========================================
+[03-03-23 10-03-12] Текст ошибки: Call to undefined function app\controllers\test() 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+        
+===========================================
+[03-03-23 03-03-56] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '->table}' at line 1 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\libs\rb.php | Строка: 838
+        
+===========================================

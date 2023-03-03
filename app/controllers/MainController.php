@@ -25,12 +25,13 @@ class MainController extends AppController
     {
         if ($this->isAjax()) {
             $model = new Main();
+//            $data = ['answer' => 'Ответ с сервера', 'code' => 200];
+//            echo json_encode($data);
             $post  = \R::findOne('posts', "id ={$_POST['id']}");
             $this->loadView('_test', compact('post'));
             die;
         }
 
         echo 222;
-//        $this->layout = 'test';
     }
 }

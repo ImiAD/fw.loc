@@ -1,5 +1,15 @@
 <div class="container">
+    <div id="answer"></div>
     <button class="btn-default" id="send">Кнопка</button>
+    <br>
+    <?php new \vendor\widgets\menu\Menu([
+//            'tpl'       => WWW.'/menu/my_menu.php',
+            'tpl'       => WWW.'/menu/select.php',
+            'container' => 'select',
+            'class'     => 'my_select',
+            'table'     => 'categories',
+            'cache'     => 60,
+    ]) ?>
     <?php if (!empty($posts)): ?>
     <?php foreach ($posts as $post): ?>
         <div class="panel panel-default">
@@ -20,7 +30,10 @@
                 type: 'POST',
                 data: {'id': 2},
                 success: function(res){
-                    console.log(res)
+                    // var data = JSON.parse(res);
+                    // $('#answer').html('<p>Ответ: '+data.answer+' | Код:  '+data.code+'</p>');
+                    $('#answer').html(res);
+                    // console.log(res);
                 },
                 error: function(){
                     alert('Error!');
