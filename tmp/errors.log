@@ -30,3 +30,7 @@
         | Файл: C:\OSPanel\domains\fw.loc\app\controllers\UserController.php | Строка: 13
         
 ===========================================
+[06-03-23 06-03-03] Текст ошибки: <p>Не найден вид <b>C:\OSPanel\domains\fw.loc/app/views/User/logout.php</b></p> 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\base\View.php | Строка: 58
+        
+===========================================
