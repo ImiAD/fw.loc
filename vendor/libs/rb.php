@@ -958,7 +958,7 @@ class RPDO implements Driver
 		}
 
 		//PHP 5.3 PDO SQLite has a bug with large numbers:
-		if ( ( strpos( $this->dsn, 'sqlite' ) === 0 && PHP_MAJOR_VERSION === 5 && PHP_MINOR_VERSION === 3 ) ||  defined('HHVM_VERSION') || $this->dsn === 'test-sqlite-53' ) {
+		if ( ( strpos( $this->dsn, 'sqlite' ) === 0 && PHP_MAJOR_VERSION === 5 && PHP_MINOR_VERSION === 3 ) ||  defined('HHVM_VERSION') || $this->dsn === 'Test-sqlite-53' ) {
 			$this->max = 2147483647; //otherwise you get -2147483648 ?! demonstrated in build #603 on Travis.
 		} elseif ( strpos( $this->dsn, 'cubrid' ) === 0 ) {
 			$this->max = 2147483647; //bindParam in pdo_cubrid also fails...
@@ -2312,7 +2312,7 @@ class OODBBean implements \IteratorAggregate,\ArrayAccess,\Countable,Jsonable
 	public function exists( $property )
 	{
 		$property = $this->beau( $property );
-		/* fixes issue #549, see Base/Bean test */
+		/* fixes issue #549, see Base/Bean Test */
 		$hiddenRelationField = "{$property}_id";
 		if ( array_key_exists( $hiddenRelationField, $this->properties ) ) {
 			if ( !is_null( $this->properties[$hiddenRelationField] ) ) {
@@ -7368,7 +7368,7 @@ class MySQL extends AQueryWriter implements QueryWriter
 			}
 		}
 
-		//setter turns TRUE FALSE into 0 and 1 because database has no real bools (TRUE and FALSE only for test?).
+		//setter turns TRUE FALSE into 0 and 1 because database has no real bools (TRUE and FALSE only for Test?).
 		if ( $value === FALSE || $value === TRUE || $value === '0' || $value === '1' || $value === 0 || $value === 1 ) {
 			return MySQL::C_DATATYPE_BOOL;
 		}
@@ -12153,7 +12153,7 @@ class Facade
 	 * Returns TRUE if connection has been established and
 	 * FALSE otherwise. Suppresses any warnings that may
 	 * occur during the testing process and catches all
-	 * exceptions that might be thrown during the test.
+	 * exceptions that might be thrown during the Test.
 	 *
 	 * @return boolean
 	 */
@@ -12276,7 +12276,7 @@ class Facade
 	 */
 	public static function useISNULLConditions( $mode )
 	{
-		self::getWriter()->flushCache(); /* otherwise same queries might fail (see Unit test XNull) */
+		self::getWriter()->flushCache(); /* otherwise same queries might fail (see Unit Test XNull) */
 		return AQueryWriter::useISNULLConditions( $mode );
 	}
 
@@ -14166,7 +14166,7 @@ class Facade
 	 * that are marked with special SQL comments. As soon as a non-marked query
 	 * gets executed the cache will be flushed. Only non-modifying select queries
 	 * have been marked therefore this mechanism is a rather safe way of caching, requiring
-	 * no explicit flushes or reloads. Of course this does not apply if you intend to test
+	 * no explicit flushes or reloads. Of course this does not apply if you intend to Test
 	 * or simulate concurrent querying.
 	 *
 	 * @param boolean $yesNo TRUE to enable cache, FALSE to disable cache
@@ -16406,7 +16406,7 @@ class QuickExport
 	public static function operation( $name, $arg1, $arg2 = TRUE ) {
 		$out = '';
 		switch( $name ) {
-			case 'test':
+			case 'Test':
 				self::$test = (boolean) $arg1;
 				break;
 			case 'header':

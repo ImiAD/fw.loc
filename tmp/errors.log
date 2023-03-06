@@ -78,3 +78,47 @@
         | Файл: C:\OSPanel\domains\fw.loc\vendor\libs\rb.php | Строка: 838
         
 ===========================================
+[03-03-23 04-03-44] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 94
+        
+===========================================
+[03-03-23 04-03-55] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 94
+        
+===========================================
+[03-03-23 04-03-43] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
+        
+===========================================
+[03-03-23 04-03-35] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 101
+        
+===========================================
+[03-03-23 04-03-58] Текст ошибки: Контроллер <b>app\controllers\admin\TestController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 99
+        
+===========================================
+[06-03-23 10-03-29] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 102
+        
+===========================================
+[06-03-23 10-03-29] Текст ошибки: Контроллер <b>app\controllers\admin\UwerController</b> не найден. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 99
+        
+===========================================
+[06-03-23 10-03-07] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 102
+        
+===========================================
+[06-03-23 10-03-24] Текст ошибки: <p>Не найден вид <b>C:\OSPanel\domains\fw.loc/app/views/admin\User/index.php</b></p> 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\base\View.php | Строка: 58
+        
+===========================================
+[06-03-23 10-03-31] Текст ошибки: Type of app\controllers\admin\UserController::$layout must be string (as in class app\controllers\admin\AppController) 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка: 7
+        
+===========================================
+[06-03-23 10-03-07] Текст ошибки: Type of app\controllers\admin\UserController::$layout must be string (as in class app\controllers\admin\AppController) 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка: 7
+        
+===========================================

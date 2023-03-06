@@ -15,10 +15,10 @@ class ErrorHandler
 
 new ErrorHandler();
 
-//echo $test;
-//test();
+//echo $Test;
+//Test();
 //try {
-//    if (empty($test)) {
+//    if (empty($Test)) {
 //        throw new \Exception('ПечалькА!');
 //    }
 //} catch (\Exception $e) {

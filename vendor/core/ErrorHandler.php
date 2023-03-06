@@ -49,7 +49,7 @@ class ErrorHandler
     {
         http_response_code($response);
 
-        if ($response == 404) {
+        if ($response == 404 && !DEBUG) {
             require_once WWW.'/errors/404.html';
             die;
         }

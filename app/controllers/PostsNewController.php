@@ -11,7 +11,7 @@ class PostsNewController extends AppController
 
     public function testAction()
     {
-        echo 'PostsNew::test';
+        echo 'PostsNew::Test';
     }
 
     public function testPageAction()

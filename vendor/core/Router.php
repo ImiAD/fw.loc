@@ -61,8 +61,15 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = 'index';
                 }
+                //получаем префикс для админской панели
+                if (!isset($route['prefix'])) {
+                    $route['prefix'] = '';
+                } else {
+                    $route['prefix'] .= '\\';
+                }
                 $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
+
                 return true;
             }
         }
@@ -78,7 +85,7 @@ class Router
     {
         $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
-            $controller = 'app\controllers\\'.self::upperCamelCase(self::$route['controller'].'Controller');
+            $controller = 'app\controllers\\'.self::$route['prefix'].self::upperCamelCase(self::$route['controller'].'Controller');
             if (class_exists($controller)) {
                 $cObj   = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action'].'Action');
@@ -87,16 +94,12 @@ class Router
                     $cObj->getView();
                 } else {
                     throw new \Exception("Метод <b>$controller::$action</b> не найден.", 404);
-//                    echo "Метод <b>$controller::$action</b> не найден.";
                 }
             } else {
                 throw new \Exception("Контроллер <b>$controller</b> не найден.", 404);
-//                echo "Контроллер <b>$controller</b> не найден.";
             }
         } else {
             throw new \Exception("Страница не найдена.", 404);
-//            http_response_code(404);
-//            require_once '404.html';
         }
     }
 
@@ -109,7 +112,7 @@ class Router
     }
 
     /**
-     * Из test-page делаем testPage, для запуска метода
+     * Из Test-page делаем testPage, для запуска метода
      */
     protected static function lowerCamelCase(string $string): string
     {

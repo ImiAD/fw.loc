@@ -49,13 +49,13 @@ class View
             extract($vars);
         }
 
-        $file_view = APP . "/views/{$this->route['controller']}/{$this->view}.php";
+        $file_view = APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php";
         ob_start();
 
         if (is_file($file_view)) {
             require_once $file_view;
         } else {
-            echo "<p>Не найден вид <b>$file_view</b></p>";
+            throw new \Exception("<p>Не найден вид <b>$file_view</b></p>", 404);
         }
 
         $content = ob_get_clean();
@@ -70,7 +70,7 @@ class View
                 }
                 require_once $file_layout;
             } else {
-                echo "<p>Не найден шаблон <b>$file_layout</b></p>";
+                throw new \Exception("<p>Не найден шаблон <b>$file_layout</b></p>", 404);
             }
         }
     }

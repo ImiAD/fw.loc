@@ -3,7 +3,7 @@
 $config = [
     'components' => [
         'cache'  => 'classes\Cache',
-        'test'   => 'classes\Test',
+        'Test'   => 'classes\Test',
     ],
 ];
 

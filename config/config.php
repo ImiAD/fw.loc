@@ -3,6 +3,6 @@
 return $config = [
     'components' => [
         'cache'  => 'vendor\libs\Cache',
-        'test'   => 'vendor\libs\Test',
+        'Test'   => 'vendor\libs\Test',
     ],
 ];
