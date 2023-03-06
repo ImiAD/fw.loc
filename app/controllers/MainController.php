@@ -24,8 +24,6 @@ class MainController extends AppController
         $log->error('Bar');
 
         $mailer = new \PHPMailer\PHPMailer\PHPMailer();
-        var_dump($mailer);
-
 
         $model = new Main();
         $posts = \R::findAll('posts');
@@ -40,8 +38,6 @@ class MainController extends AppController
     {
         if ($this->isAjax()) {
             $model = new Main();
-//            $data = ['answer' => 'Ответ с сервера', 'code' => 200];
-//            echo json_encode($data);
             $post  = \R::findOne('posts', "id ={$_POST['id']}");
             $this->loadView('_test', compact('post'));
             die;

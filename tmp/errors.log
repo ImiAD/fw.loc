@@ -14,3 +14,19 @@
         | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 26
         
 ===========================================
+[06-03-23 02-03-03] Текст ошибки: <p>Не найден вид <b>C:\OSPanel\domains\fw.loc/app/views/User/logout.php</b></p> 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\base\View.php | Строка: 58
+        
+===========================================
+[06-03-23 02-03-57] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\Router.php | Строка: 102
+        
+===========================================
+[06-03-23 03-03-13] Текст ошибки: Class 'app\controllers\User' not found 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\UserController.php | Строка: 13
+        
+===========================================
+[06-03-23 03-03-31] Текст ошибки: Class 'app\controllers\User' not found 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\UserController.php | Строка: 13
+        
+===========================================
