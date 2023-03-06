@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\core;
+namespace fw\core;
 
 
 class Registry
@@ -13,7 +13,7 @@ class Registry
 
     protected function __construct()
     {
-        require_once ROOT.'/config/config.php';
+        require_once ROOT . '/config/config.php';
         foreach ($config['components'] as $name => $component) {
             self::$objects[$name] = new $component;
         }

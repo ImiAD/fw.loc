@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\core;
+namespace fw\core;
 
 class ErrorHandler
 {
@@ -50,14 +50,14 @@ class ErrorHandler
         http_response_code($response);
 
         if ($response == 404 && !DEBUG) {
-            require_once WWW.'/errors/404.html';
+            require_once WWW . '/errors/404.html';
             die;
         }
 
         if (DEBUG) {
-            require_once WWW.'/errors/dev.php';
+            require_once WWW . '/errors/dev.php';
         } else {
-            require_once WWW.'/errors/prod.php';
+            require_once WWW . '/errors/prod.php';
         }
 
         die;

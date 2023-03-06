@@ -2,7 +2,7 @@
     <div id="answer"></div>
     <button class="btn-default" id="send">Кнопка</button>
     <br>
-    <?php new \vendor\widgets\menu\Menu([
+    <?php new \fw\widgets\menu\Menu([
 //            'tpl'       => WWW.'/menu/my_menu.php',
             'tpl'       => WWW.'/menu/select.php',
             'container' => 'select',

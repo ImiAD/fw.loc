@@ -1,124 +1,16 @@
-[02-03-23 05-03-12] Текст ошибки: Undefined variable: test 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
+[06-03-23 12-03-54] Текст ошибки: Class 'app\controllers\Level' not found 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 20
         
 ===========================================
-[02-03-23 05-03-12] Текст ошибки:  
-        | Файл:  | Строка: 
+[06-03-23 12-03-34] Текст ошибки: Undefined class constant 'Warning' 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 20
         
 ===========================================
-[02-03-23 05-03-53] Текст ошибки: Call to undefined function vendor\core\test() 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 85
+[06-03-23 12-03-01] Текст ошибки: Class 'app\controllers\Level' not found 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 20
         
 ===========================================
-[02-03-23 05-03-53] Текст ошибки: Trying to access array offset on value of type null 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 36
-        
-===========================================
-[02-03-23 05-03-14] Текст ошибки: Call to undefined function vendor\core\test() 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
-        
-===========================================
-[02-03-23 05-03-14] Текст ошибки: Trying to access array offset on value of type null 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 37
-        
-===========================================
-[02-03-23 05-03-16] Текст ошибки: Call to undefined function vendor\core\test() 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
-        
-===========================================
-[02-03-23 05-03-16] Текст ошибки: Trying to access array offset on value of type null 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 37
-        
-===========================================
-[02-03-23 05-03-49] Текст ошибки: Undefined variable: t 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
-        
-===========================================
-[02-03-23 05-03-06] Текст ошибки: Undefined variable: t 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
-        
-===========================================
-[02-03-23 05-03-18] Текст ошибки: Call to undefined function vendor\core\test() 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\ErrorHandler.php | Строка: 86
-        
-===========================================
-[02-03-23 05-03-33] Текст ошибки: Страница не найдена. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
-        
-===========================================
-[02-03-23 05-03-51] Текст ошибки: Страница не найдена. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
-        
-===========================================
-[03-03-23 08-03-59] Текст ошибки: Страница не найдена. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
-        
-===========================================
-[03-03-23 09-03-54] Текст ошибки: Undefined variable: test 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
-        
-===========================================
-[03-03-23 10-03-18] Текст ошибки: Undefined variable: test 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
-        
-===========================================
-[03-03-23 10-03-19] Текст ошибки: Undefined variable: test 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
-        
-===========================================
-[03-03-23 10-03-28] Текст ошибки: Undefined variable: test 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 17
-        
-===========================================
-[03-03-23 10-03-12] Текст ошибки: Call to undefined function app\controllers\test() 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 16
-        
-===========================================
-[03-03-23 03-03-56] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '->table}' at line 1 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\libs\rb.php | Строка: 838
-        
-===========================================
-[03-03-23 04-03-44] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 94
-        
-===========================================
-[03-03-23 04-03-55] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 94
-        
-===========================================
-[03-03-23 04-03-43] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 97
-        
-===========================================
-[03-03-23 04-03-35] Текст ошибки: Контроллер <b>app\controllers\TestController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 101
-        
-===========================================
-[03-03-23 04-03-58] Текст ошибки: Контроллер <b>app\controllers\admin\TestController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 99
-        
-===========================================
-[06-03-23 10-03-29] Текст ошибки: Страница не найдена. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 102
-        
-===========================================
-[06-03-23 10-03-29] Текст ошибки: Контроллер <b>app\controllers\admin\UwerController</b> не найден. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 99
-        
-===========================================
-[06-03-23 10-03-07] Текст ошибки: Страница не найдена. 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\Router.php | Строка: 102
-        
-===========================================
-[06-03-23 10-03-24] Текст ошибки: <p>Не найден вид <b>C:\OSPanel\domains\fw.loc/app/views/admin\User/index.php</b></p> 
-        | Файл: C:\OSPanel\domains\fw.loc\vendor\core\base\View.php | Строка: 58
-        
-===========================================
-[06-03-23 10-03-31] Текст ошибки: Type of app\controllers\admin\UserController::$layout must be string (as in class app\controllers\admin\AppController) 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка: 7
-        
-===========================================
-[06-03-23 10-03-07] Текст ошибки: Type of app\controllers\admin\UserController::$layout must be string (as in class app\controllers\admin\AppController) 
-        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка: 7
+[06-03-23 12-03-27] Текст ошибки: Class 'PHPMailer' not found 
+        | Файл: C:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка: 26
         
 ===========================================

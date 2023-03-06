@@ -1,7 +1,10 @@
 <?php
 
 
-namespace vendor\core;
+namespace fw\core;
+
+use fw\core\Registry;
+use fw\core\ErrorHandler;
 
 class App
 {

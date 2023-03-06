@@ -1,7 +1,7 @@
 <?php
 
 
-namespace vendor\libs;
+namespace fw\libs;
 
 
 class Test

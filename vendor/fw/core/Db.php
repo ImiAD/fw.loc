@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\core;
+namespace fw\core;
 
 class Db
 {
@@ -23,8 +23,8 @@ class Db
 
     protected function __construct()
     {
-        $db = require ROOT.'/config/config_db.php';
-        require_once LIBS.'/rb.php';
+        $db = require ROOT . '/config/config_db.php';
+        require_once LIBS . '/rb.php';
 
         /**
          * устанаваливаем соединение с БД
