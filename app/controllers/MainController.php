@@ -27,10 +27,8 @@ class MainController extends AppController
         $start      = $pagination->getStart();
 
         $posts = \R::findAll('posts', "LIMIT $start, $perpage");
-        $menu  = $this->menu;
-        $title = 'PAGE TITLE';
-        $meta  = View::setMeta('Главная странца','Описание страницы','Ключевые слова');
-        $this->set(compact('title', 'posts', 'menu', 'meta', 'pagination', 'total'));
+        $meta  = View::setMeta('Blog:: Главная странца','Описание страницы','Ключевые слова');
+        $this->set(compact('posts', 'pagination', 'total'));
     }
 
     public function testAction()

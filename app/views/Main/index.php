@@ -1,46 +1,20 @@
-<div class="container">
-    <div id="answer"></div>
-    <button class="btn-default" id="send">Кнопка</button>
-    <br>
-    <?php new \fw\widgets\menu\Menu([
-            'tpl'       => WWW.'/menu/select.php',
-            'container' => 'select',
-            'class'     => 'my_select',
-            'table'     => 'categories',
-            'cache'     => 60,
-    ]) ?>
-    <?php if (!empty($posts)): ?>
+<?php if (!empty($posts)): ?>
     <?php foreach ($posts as $post): ?>
-        <div class="panel panel-default">
-            <div class="panel-heading"><?= $post['title'] ?></div>
-            <div class="panel-body">
-                <?= $post['text'] ?>
+        <div class="content-grid-info">
+            <img src="/blog/images/post1.jpg" alt=""/>
+            <div class="post-info">
+                <h4><a href="<?= $post->id ?>>"><?= $post->title ?></a>  July 30, 2014 / 27 Comments</h4>
+                <p><?= $post->excerpt ?></p>
+                <a href="<?= $post->id ?>"><span></span>READ MORE</a>
             </div>
         </div>
     <?php endforeach ?>
     <div class="text-center">
         <p>Статей: <?= count($posts) ?> из <?= $total ?></p>
         <?php if ($pagination->countPages > 1): ?>
-        <?= $pagination ?>
+            <?= $pagination ?>
         <?php endif ?>
     </div>
-    <?php endif ?>
-</div>
-<script src="/js/test.js"></script>
-<script>
-    $(function() {
-        $('#send').click(function(){
-            $.ajax({
-                url: '/main/test',
-                type: 'POST',
-                data: {'id': 2},
-                success: function(res){
-                    $('#answer').html(res);
-                },
-                error: function(){
-                    alert('Error!');
-                }
-            });
-        });
-    });
-</script>
+<?php else: ?>
+    <h3>Posts not found...</h3>
+<?php endif ?>

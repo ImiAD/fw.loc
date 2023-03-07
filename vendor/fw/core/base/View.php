@@ -106,4 +106,14 @@ class View
         self::$meta['desc']     = $desc;
         self::$meta['keywords'] = $keywords;
     }
+
+    public function getPart(string $file)
+    {
+        $file = APP . "/views/{$file}.php";
+        if (is_file($file)) {
+            require_once $file;
+        } else {
+            echo "File {$file} not found...";
+        }
+    }
 }

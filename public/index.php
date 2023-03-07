@@ -9,7 +9,7 @@ define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/fw/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__).'/app');
-define('LAYOUT', 'default');
+define('LAYOUT', 'blog');
 define('LIBS', dirname(__DIR__) . '/vendor/fw/libs');
 define('CACHE', dirname(__DIR__).'/tmp/cache');
 define('DEBUG', 1);
@@ -17,16 +17,6 @@ define('DEBUG', 1);
 require_once '../vendor/fw/libs/functions.php';
 //подключение автозагрузчика композера
 require_once  __DIR__.'/../vendor/autoload.php';
-
-//spl_autoload_register(function($class) {
-//   $file = ROOT.'/'.str_replace('\\','/', $class).'.php';
-//
-//   if (is_file($file)) {
-//       require_once $file;
-//   }
-//});
-
-
 
 new \fw\core\App();
 
