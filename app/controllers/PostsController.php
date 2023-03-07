@@ -12,6 +12,6 @@ class PostsController extends AppController
     public function testAction()
     {
         debug($this->route);
-        echo 'Posts::test';
+        echo 'Posts::Test';
     }
 }

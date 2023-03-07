@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Main;
-use vendor\core\base\Controller;
+use fw\core\base\Controller;
 
 class AppController extends Controller
 {
@@ -13,9 +13,9 @@ class AppController extends Controller
     public function __construct($route)
     {
         parent::__construct($route);
-        if ($this->route['action'] == 'test') {
-            echo '<h1>TEST</h1>';
-        }
+//        if ($this->route['action'] == 'Test') {
+//            echo '<h1>TEST</h1>';
+//        }
         new Main();
         $this->menu = \R::findAll('category');
     }
