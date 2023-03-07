@@ -34,3 +34,51 @@
         | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\base\View.php | Строка: 58
         
 ===========================================
+[07-03-23 10-03-43] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-44] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\Router.php | Строка: 102
+        
+===========================================
+[07-03-23 10-03-45] Текст ошибки: Страница не найдена. 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\core\Router.php | Строка: 102
+        
+===========================================
+[07-03-23 10-03-51] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-52] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-59] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-07] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-09] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-19] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'fw.post' doesn't exist 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\rb.php | Строка: 838
+        
+===========================================
+[07-03-23 10-03-05] Текст ошибки: Call to undefined method fw\libs\Pagination::getCurrentPage() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\Pagination.php | Строка: 37
+        
+===========================================
+[07-03-23 10-03-44] Текст ошибки: Call to undefined method fw\libs\Pagination::getCurrentPage() 
+        | Файл: C:\OSPanel\domains\fw.loc\vendor\fw\libs\Pagination.php | Строка: 37
+        
+===========================================
+[07-03-23 10-03-53] Текст ошибки: Undefined variable: count 
+        | Файл: C:\OSPanel\domains\fw.loc\app\views\Main\index.php | Строка: 22
+        
+===========================================

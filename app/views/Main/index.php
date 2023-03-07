@@ -3,7 +3,6 @@
     <button class="btn-default" id="send">Кнопка</button>
     <br>
     <?php new \fw\widgets\menu\Menu([
-//            'tpl'       => WWW.'/menu/my_menu.php',
             'tpl'       => WWW.'/menu/select.php',
             'container' => 'select',
             'class'     => 'my_select',
@@ -19,6 +18,12 @@
             </div>
         </div>
     <?php endforeach ?>
+    <div class="text-center">
+        <p>Статей: <?= count($posts) ?> из <?= $total ?></p>
+        <?php if ($pagination->countPages > 1): ?>
+        <?= $pagination ?>
+        <?php endif ?>
+    </div>
     <?php endif ?>
 </div>
 <script src="/js/test.js"></script>
@@ -30,10 +35,7 @@
                 type: 'POST',
                 data: {'id': 2},
                 success: function(res){
-                    // var data = JSON.parse(res);
-                    // $('#answer').html('<p>Ответ: '+data.answer+' | Код:  '+data.code+'</p>');
                     $('#answer').html(res);
-                    // console.log(res);
                 },
                 error: function(){
                     alert('Error!');

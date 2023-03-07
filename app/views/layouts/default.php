@@ -36,8 +36,6 @@
                     </div>
                 <?php endif ?>
 
-        <?= debug($_SESSION) ?>
-
         <?= $content ?>
 
     </dvi>
